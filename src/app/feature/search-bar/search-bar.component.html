@@ -1,0 +1,42 @@
+<form class="form-inline" [formGroup]="searchForm">
+  <div class="row">
+    <div class="col">
+      <h6 class="search-text">Search by:</h6>
+    </div>
+    <div class="col">
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field>
+        <mat-select placeholder="Priority" formControlName="priority">
+          <mat-option *ngFor="let priority of Priority" [value]="priority.value">
+            {{priority.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field>
+        <mat-select placeholder="Reporter" formControlName="reporter">
+          <mat-option *ngFor="let reporter of Reporter" [value]="reporter">
+            {{reporter}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field>
+        <mat-select placeholder="Status" formControlName="status">
+          <mat-option *ngFor="let status of Status" [value]="status">
+            {{status}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-icon class="search-button" (click)="searchWithParams(searchForm)">search</mat-icon>
+    <mat-icon [@openClose]="showClearBtn ? 'open' : 'closed'" class="clear-button" (click)="resetParams()">clear
+    </mat-icon>
+  </div>
+</form>

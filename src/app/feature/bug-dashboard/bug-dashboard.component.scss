@@ -1,0 +1,30 @@
+table {
+  width: 100%;
+}
+
+.title-plus-icon {
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  left: 10px;
+  top: 3px;
+}
+
+th {
+  cursor: pointer;
+  width: 20%;
+}
+
+.title {
+  cursor: pointer;
+  position: sticky;
+}
+.edit-icon {
+  display: none;
+}
+
+.title:hover .edit-icon {
+  display: inline;
+  cursor: pointer;
+  padding-left: 10px;
+}
